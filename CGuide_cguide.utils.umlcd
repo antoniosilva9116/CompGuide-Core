@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_t24z0GjwEeSEBpDXoUmhnA">
+  <modelElement href="CGuide.uml#_hpXHAGjwEeSEBpDXoUmhnA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_D5Gt0WjxEeSEBpDXoUmhnA" targetItem="_D5Qe0GjxEeSEBpDXoUmhnA" sourceItem="_D5Gt0GjxEeSEBpDXoUmhnA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_D5Qe7mjxEeSEBpDXoUmhnA" targetItem="_D5ZowGjxEeSEBpDXoUmhnA" sourceItem="_D5Qe7WjxEeSEBpDXoUmhnA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_D5jZwGjxEeSEBpDXoUmhnA" sourceAnchor="163.0,0.0" targetAnchor="0.0,49.0" target="_D5sjwWjxEeSEBpDXoUmhnA" source="_D5sjwWjxEeSEBpDXoUmhnA">
+    <modelElement href="CGuide.uml#_q15IAGjwEeSEBpDXoUmhnA"/>
+    <visualProperties xmi:id="_D6JPvGjxEeSEBpDXoUmhnA" position="170.0,170.0"/>
+    <bendpoints xmi:id="_EdSY8GjxEeSEBpDXoUmhnA" sourceY="-94" targetX="163" targetY="-143"/>
+    <bendpoints xmi:id="_EdSY8WjxEeSEBpDXoUmhnA" sourceX="-273" sourceY="-94" targetX="-110" targetY="-143"/>
+    <bendpoints xmi:id="_EdSY8mjxEeSEBpDXoUmhnA" sourceX="-273" sourceY="49" targetX="-110"/>
+    <stereotypes xmi:id="_D5sjsmjxEeSEBpDXoUmhnA" name="Reference">
+      <modelElement href="CGuide.uml#_q18LUGjwEeSEBpDXoUmhnA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_D5jZwWjxEeSEBpDXoUmhnA" text="">
+      <visualProperties xmi:id="_EdSY9GjxEeSEBpDXoUmhnA" position="212.5,-8.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_D5sjsGjxEeSEBpDXoUmhnA" aggregationKind="NONE" name="">
+      <modelElement href="CGuide.uml#_q15IAWjwEeSEBpDXoUmhnA"/>
+      <visualProperties xmi:id="_EdSY82jxEeSEBpDXoUmhnA" position="-21.0,-50.0"/>
+      <visibility xmi:id="_D5sjtGjxEeSEBpDXoUmhnA" label="+"/>
+      <cardinality xmi:id="_D5sjs2jxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_D5sjsWjxEeSEBpDXoUmhnA" aggregationKind="NONE" name="instance" navigable="true">
+      <modelElement href="CGuide.uml#_qxd7AWjwEeSEBpDXoUmhnA"/>
+      <visualProperties xmi:id="_EdSY9WjxEeSEBpDXoUmhnA" position="-64.5,3.999999999999943"/>
+      <stereotypes xmi:id="_GPV_oGmlEeSEBpDXoUmhnA" name="LegacyStyledElement">
+        <modelElement href="CGuide.uml#_qxeiEGjwEeSEBpDXoUmhnA"/>
+      </stereotypes>
+      <visibility xmi:id="_D5sjtmjxEeSEBpDXoUmhnA" label="+"/>
+      <cardinality xmi:id="_D5sjtWjxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_D5sjuGjxEeSEBpDXoUmhnA" source="_D5sjwWjxEeSEBpDXoUmhnA">
+    <modelElement href="CGuide.uml#_q10PgGjwEeSEBpDXoUmhnA"/>
+    <visualProperties xmi:id="_D6JPu2jxEeSEBpDXoUmhnA" position="150.0,150.0"/>
+    <stereotypes xmi:id="_D5sjuWjxEeSEBpDXoUmhnA" name="Reference">
+      <modelElement href="CGuide.uml#_q1354GjwEeSEBpDXoUmhnA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_D5sjumjxEeSEBpDXoUmhnA" text=""/>
+    <sourceRole xmi:id="_D5sju2jxEeSEBpDXoUmhnA" aggregationKind="NONE" name="">
+      <modelElement href="CGuide.uml#_q10PgWjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5sjvGjxEeSEBpDXoUmhnA" label="+"/>
+      <cardinality xmi:id="_D5sjvWjxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_D5sjvmjxEeSEBpDXoUmhnA" aggregationKind="NONE" name="executor" navigable="true">
+      <modelElement href="CGuide.uml#_qxcs4GjwEeSEBpDXoUmhnA"/>
+      <stereotypes xmi:id="_GPhl0GmlEeSEBpDXoUmhnA" name="LegacyStyledElement">
+        <modelElement href="CGuide.uml#_qxd7AGjwEeSEBpDXoUmhnA"/>
+      </stereotypes>
+      <visibility xmi:id="_D5sjv2jxEeSEBpDXoUmhnA" label="-"/>
+      <cardinality xmi:id="_D5sjwGjxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_D6AFsWjxEeSEBpDXoUmhnA" targetItem="_D6JPoGjxEeSEBpDXoUmhnA" sourceItem="_D6AFsGjxEeSEBpDXoUmhnA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_D6TAoGjxEeSEBpDXoUmhnA">
+    <modelElement href="CGuide.uml#_q19ZcGjwEeSEBpDXoUmhnA"/>
+    <visualProperties xmi:id="_D6TAoWjxEeSEBpDXoUmhnA" position="190.0,190.0"/>
+    <stereotypes xmi:id="_D6TAomjxEeSEBpDXoUmhnA" name="Reference">
+      <modelElement href="CGuide.uml#_q1-nkGjwEeSEBpDXoUmhnA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_D6TAo2jxEeSEBpDXoUmhnA" text=""/>
+    <sourceRole xmi:id="_D6TApGjxEeSEBpDXoUmhnA" aggregationKind="NONE" name="">
+      <modelElement href="CGuide.uml#_q19ZcWjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D6TApWjxEeSEBpDXoUmhnA" label="+"/>
+      <cardinality xmi:id="_D6TApmjxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_D6TAp2jxEeSEBpDXoUmhnA" aggregationKind="NONE" name="mail" navigable="true">
+      <modelElement href="CGuide.uml#_qxgXQGjwEeSEBpDXoUmhnA"/>
+      <stereotypes xmi:id="_D6TAqGjxEeSEBpDXoUmhnA" name="LegacyStyledElement">
+        <modelElement href="CGuide.uml#_qxg-UGjwEeSEBpDXoUmhnA"/>
+      </stereotypes>
+      <visibility xmi:id="_D6TAqWjxEeSEBpDXoUmhnA" label="~"/>
+      <cardinality xmi:id="_D6TAqmjxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_D6TAq2jxEeSEBpDXoUmhnA">
+    <modelElement href="CGuide.uml#_q1_OoGjwEeSEBpDXoUmhnA"/>
+    <visualProperties xmi:id="_D6TArGjxEeSEBpDXoUmhnA" position="210.0,210.0"/>
+    <stereotypes xmi:id="_D6TArWjxEeSEBpDXoUmhnA" name="Reference">
+      <modelElement href="CGuide.uml#_q2AcwGjwEeSEBpDXoUmhnA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_D6TArmjxEeSEBpDXoUmhnA" text=""/>
+    <sourceRole xmi:id="_D6TAr2jxEeSEBpDXoUmhnA" aggregationKind="NONE" name="">
+      <modelElement href="CGuide.uml#_q1_OoWjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D6TAsGjxEeSEBpDXoUmhnA" label="+"/>
+      <cardinality xmi:id="_D6TAsWjxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_D6TAsmjxEeSEBpDXoUmhnA" aggregationKind="NONE" name="mailSession" navigable="true">
+      <modelElement href="CGuide.uml#_qxhlYGjwEeSEBpDXoUmhnA"/>
+      <stereotypes xmi:id="_D6TAs2jxEeSEBpDXoUmhnA" name="LegacyStyledElement">
+        <modelElement href="CGuide.uml#_qxiMcGjwEeSEBpDXoUmhnA"/>
+      </stereotypes>
+      <visibility xmi:id="_D6TAtGjxEeSEBpDXoUmhnA" label="~"/>
+      <cardinality xmi:id="_D6TAtWjxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_D5Gt0GjxEeSEBpDXoUmhnA" sourceConnectionVisual="_D5Gt0WjxEeSEBpDXoUmhnA" text="Created by IntelliJ IDEA.&#xA;User: andre&#xA;Date: 12/1/12&#xA;Time: 2:21 PM" item="_D5Qe0GjxEeSEBpDXoUmhnA">
+    <modelElement href="CGuide.uml#_qzxoIGjwEeSEBpDXoUmhnA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_D5Qe7WjxEeSEBpDXoUmhnA" sourceConnectionVisual="_D5Qe7mjxEeSEBpDXoUmhnA" text="Created by IntelliJ IDEA.&#xA;User: andre&#xA;Date: 12/1/12&#xA;Time: 6:27 PM" item="_D5ZowGjxEeSEBpDXoUmhnA">
+    <modelElement href="CGuide.uml#_qzy2QWjwEeSEBpDXoUmhnA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_D6AFsGjxEeSEBpDXoUmhnA" sourceConnectionVisual="_D6AFsWjxEeSEBpDXoUmhnA" text="Created by IntelliJ IDEA.&#xA;User: andre&#xA;Date: 1/12/13&#xA;Time: 12:15 AM" item="_D6JPoGjxEeSEBpDXoUmhnA">
+    <modelElement href="CGuide.uml#_qzy2QGjwEeSEBpDXoUmhnA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_D5Qe0GjxEeSEBpDXoUmhnA" comments="_D5Gt0GjxEeSEBpDXoUmhnA" targetConnectionVisual="_D5Gt0WjxEeSEBpDXoUmhnA" name="Mailer">
+    <modelElement href="CGuide.uml#_kKF-YGjwEeSEBpDXoUmhnA"/>
+    <visualProperties xmi:id="_D5Qe0WjxEeSEBpDXoUmhnA" position="50.0,50.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_D5Qe0mjxEeSEBpDXoUmhnA" label="+"/>
+    <operations xmi:id="_D5Qe02jxEeSEBpDXoUmhnA" name="sendActivationMail" staticOperation="true">
+      <modelElement href="CGuide.uml#_qWf2QGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5Qe1GjxEeSEBpDXoUmhnA" label="+"/>
+      <parameters xmi:id="_D5Qe1WjxEeSEBpDXoUmhnA" name="email">
+        <modelElement href="CGuide.uml#_qWf2QWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe1mjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Qe12jxEeSEBpDXoUmhnA" name="key">
+        <modelElement href="CGuide.uml#_qWgdUGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe2GjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Qe2WjxEeSEBpDXoUmhnA" name="username">
+        <modelElement href="CGuide.uml#_qWhEYGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe2mjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Qe22jxEeSEBpDXoUmhnA" name="password">
+        <modelElement href="CGuide.uml#_qWhEYWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe3GjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D5Qe3WjxEeSEBpDXoUmhnA" name="sendEmailChangedMail" staticOperation="true">
+      <modelElement href="CGuide.uml#_qWnyEGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5Qe3mjxEeSEBpDXoUmhnA" label="+"/>
+      <parameters xmi:id="_D5Qe32jxEeSEBpDXoUmhnA" name="email">
+        <modelElement href="CGuide.uml#_qWqOUGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe4GjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Qe4WjxEeSEBpDXoUmhnA" name="key">
+        <modelElement href="CGuide.uml#_qWq1YGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe4mjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Qe42jxEeSEBpDXoUmhnA" name="username">
+        <modelElement href="CGuide.uml#_qWrccGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe5GjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D5Qe5WjxEeSEBpDXoUmhnA" name="sendPasswordRecoveryEmail" staticOperation="true">
+      <modelElement href="CGuide.uml#_qWwU8GjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5Qe5mjxEeSEBpDXoUmhnA" label="+"/>
+      <parameters xmi:id="_D5Qe52jxEeSEBpDXoUmhnA" name="email">
+        <modelElement href="CGuide.uml#_qWwU8WjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe6GjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Qe6WjxEeSEBpDXoUmhnA" name="password">
+        <modelElement href="CGuide.uml#_qWw8AGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe6mjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Qe62jxEeSEBpDXoUmhnA" name="username">
+        <modelElement href="CGuide.uml#_qWw8AWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Qe7GjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_D5ZowGjxEeSEBpDXoUmhnA" comments="_D5Qe7WjxEeSEBpDXoUmhnA" targetConnectionVisual="_D5Qe7mjxEeSEBpDXoUmhnA" name="Utils">
+    <modelElement href="CGuide.uml#_kKHMgGjwEeSEBpDXoUmhnA"/>
+    <visualProperties xmi:id="_D5ZowWjxEeSEBpDXoUmhnA" position="-525.0,-7.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_D5ZowmjxEeSEBpDXoUmhnA" label="+"/>
+    <operations xmi:id="_D5Zow2jxEeSEBpDXoUmhnA" name="alternateTaskTest" staticOperation="true">
+      <modelElement href="CGuide.uml#_qNaLsGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5ZoxGjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D5ZoxWjxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qXAMkGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5ZoxmjxEeSEBpDXoUmhnA" name="Boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D5Zox2jxEeSEBpDXoUmhnA" name="conditions">
+        <modelElement href="CGuide.uml#_qNaLsWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5ZoyGjxEeSEBpDXoUmhnA" name="ArrayList">
+          <modelElement href="CGuide.uml#_kE7KgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5ZoyWjxEeSEBpDXoUmhnA" name="task">
+        <modelElement href="CGuide.uml#_qNaLsmjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5ZoymjxEeSEBpDXoUmhnA" name="ArrayList">
+          <modelElement href="CGuide.uml#_kE7KgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D5Zoy2jxEeSEBpDXoUmhnA" name="processDecision" staticOperation="true">
+      <modelElement href="CGuide.uml#_qNcA4WjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5ZozGjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D5ZozWjxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qXAMkWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5ZozmjxEeSEBpDXoUmhnA" name="Boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D5Zoz2jxEeSEBpDXoUmhnA" name="conditions">
+        <modelElement href="CGuide.uml#_qNcA4mjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo0GjxEeSEBpDXoUmhnA" name="ArrayList">
+          <modelElement href="CGuide.uml#_kE7KgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Zo0WjxEeSEBpDXoUmhnA" name="task">
+        <modelElement href="CGuide.uml#_qNcn8GjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo0mjxEeSEBpDXoUmhnA" name="ArrayList">
+          <modelElement href="CGuide.uml#_kE7KgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D5Zo02jxEeSEBpDXoUmhnA" name="testConditionSet" staticOperation="true">
+      <modelElement href="CGuide.uml#_qNd2EWjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5Zo1GjxEeSEBpDXoUmhnA" label="-"/>
+      <outParameters xmi:id="_D5Zo1WjxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qXAzoGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo1mjxEeSEBpDXoUmhnA" name="Boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D5Zo12jxEeSEBpDXoUmhnA" name="conditionSet">
+        <modelElement href="CGuide.uml#_qNd2EmjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo2GjxEeSEBpDXoUmhnA" name="ConditionSet">
+          <modelElement href="CGuide.uml#_is2kUGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Zo2WjxEeSEBpDXoUmhnA" name="conditions">
+        <modelElement href="CGuide.uml#_qNd2E2jwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo2mjxEeSEBpDXoUmhnA" name="ArrayList">
+          <modelElement href="CGuide.uml#_kE7KgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D5Zo22jxEeSEBpDXoUmhnA" name="containsCondition" staticOperation="true">
+      <modelElement href="CGuide.uml#_qNfEMWjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5Zo3GjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D5Zo3WjxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qXAzoWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo3mjxEeSEBpDXoUmhnA" name="Boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D5Zo32jxEeSEBpDXoUmhnA" name="c">
+        <modelElement href="CGuide.uml#_qNfrQGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo4GjxEeSEBpDXoUmhnA" name="Condition">
+          <modelElement href="CGuide.uml#_ish0MGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5Zo4WjxEeSEBpDXoUmhnA" name="cs">
+        <modelElement href="CGuide.uml#_qNfrQWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo4mjxEeSEBpDXoUmhnA" name="ArrayList">
+          <modelElement href="CGuide.uml#_kE7KgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D5Zo42jxEeSEBpDXoUmhnA" name="generateRandomKey" staticOperation="true">
+      <modelElement href="CGuide.uml#_qW9wUGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5Zo5GjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D5Zo5WjxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qW-XYGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo5mjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D5Zo52jxEeSEBpDXoUmhnA" name="length">
+        <modelElement href="CGuide.uml#_qW9wUWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo6GjxEeSEBpDXoUmhnA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D5Zo6WjxEeSEBpDXoUmhnA" name="parseId" staticOperation="true">
+      <modelElement href="CGuide.uml#_qW--cGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5Zo6mjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D5Zo62jxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qW_lgGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo7GjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D5Zo7WjxEeSEBpDXoUmhnA" name="iri">
+        <modelElement href="CGuide.uml#_qW--cWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5Zo7mjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_D5sjwWjxEeSEBpDXoUmhnA" name="MailExecutor" associationsIn="_D5jZwGjxEeSEBpDXoUmhnA" associationsOut="_D5jZwGjxEeSEBpDXoUmhnA _D5sjuGjxEeSEBpDXoUmhnA">
+    <modelElement href="CGuide.uml#_qV6ncGjwEeSEBpDXoUmhnA"/>
+    <visualProperties xmi:id="_D5sjwmjxEeSEBpDXoUmhnA" position="-891.0,94.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_D5sjw2jxEeSEBpDXoUmhnA" label="+"/>
+    <attributes xmi:id="_D5sjxGjxEeSEBpDXoUmhnA" name="executor">
+      <modelElement href="CGuide.uml#_qxcs4GjwEeSEBpDXoUmhnA"/>
+      <stereotypes xmi:id="_D5sjxmjxEeSEBpDXoUmhnA" name="LegacyStyledElement">
+        <modelElement href="CGuide.uml#_qxd7AGjwEeSEBpDXoUmhnA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_GP4LIGmlEeSEBpDXoUmhnA" name="LegacyStyledElement">
+        <modelElement href="CGuide.uml#_qxd7AGjwEeSEBpDXoUmhnA"/>
+      </stereotypes>
+      <visibility xmi:id="_D5sjx2jxEeSEBpDXoUmhnA" label="-"/>
+      <cardinality xmi:id="_D5sjyGjxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+      <type xmi:id="_D5sjyWjxEeSEBpDXoUmhnA" name="ExecutorService">
+        <modelElement href="CGuide.uml#_qty78WjwEeSEBpDXoUmhnA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_D5sjymjxEeSEBpDXoUmhnA" defaultValue="new MailExecutor()" name="instance" staticAttribute="true">
+      <modelElement href="CGuide.uml#_qxd7AWjwEeSEBpDXoUmhnA"/>
+      <stereotypes xmi:id="_D5sjt2jxEeSEBpDXoUmhnA" name="LegacyStyledElement">
+        <modelElement href="CGuide.uml#_qxeiEGjwEeSEBpDXoUmhnA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_GP0gwGmlEeSEBpDXoUmhnA" name="LegacyStyledElement">
+        <modelElement href="CGuide.uml#_qxeiEGjwEeSEBpDXoUmhnA"/>
+      </stereotypes>
+      <visibility xmi:id="_D5sjzGjxEeSEBpDXoUmhnA" label="+"/>
+      <cardinality xmi:id="_D5sjzWjxEeSEBpDXoUmhnA" label="1" max="1" min="1"/>
+      <type xmi:id="_D5sjzmjxEeSEBpDXoUmhnA" name="MailExecutor">
+        <modelElement href="CGuide.uml#_qV6ncGjwEeSEBpDXoUmhnA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_D5sjz2jxEeSEBpDXoUmhnA" name="MailExecutor">
+      <modelElement href="CGuide.uml#_qV-R0GjwEeSEBpDXoUmhnA"/>
+      <keywords xmi:id="_D5sj0GjxEeSEBpDXoUmhnA" keyword="create"/>
+      <visibility xmi:id="_D5sj0WjxEeSEBpDXoUmhnA" label="-"/>
+      <outParameters xmi:id="_D5sj0mjxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qV-44WjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5sj02jxEeSEBpDXoUmhnA" name="MailExecutor">
+          <modelElement href="CGuide.uml#_qV6ncGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_D5sj1GjxEeSEBpDXoUmhnA" name="addMailJob">
+      <modelElement href="CGuide.uml#_qvNRMGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D5sj1WjxEeSEBpDXoUmhnA" label="+"/>
+      <parameters xmi:id="_D5sj1mjxEeSEBpDXoUmhnA" name="mail">
+        <modelElement href="CGuide.uml#_qvNRMWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5sj12jxEeSEBpDXoUmhnA" name="Message">
+          <modelElement href="CGuide.uml#_qtuqgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D5sj2GjxEeSEBpDXoUmhnA" name="mailSession">
+        <modelElement href="CGuide.uml#_qvN4QGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D5sj2WjxEeSEBpDXoUmhnA" name="Session">
+          <modelElement href="CGuide.uml#_qtv4oWjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_D52UsGjxEeSEBpDXoUmhnA" name="MailUtils">
+    <modelElement href="CGuide.uml#_qWRz0GjwEeSEBpDXoUmhnA"/>
+    <visualProperties xmi:id="_D52UsWjxEeSEBpDXoUmhnA" position="630.0,50.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_D52UsmjxEeSEBpDXoUmhnA" label="+"/>
+    <operations xmi:id="_D52Us2jxEeSEBpDXoUmhnA" name="createActivationEmail" staticOperation="true">
+      <modelElement href="CGuide.uml#_qvV0EGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D52UtGjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D52UtWjxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qvXCMGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UtmjxEeSEBpDXoUmhnA" name="Message">
+          <modelElement href="CGuide.uml#_qtuqgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D52Ut2jxEeSEBpDXoUmhnA" name="mailSession">
+        <modelElement href="CGuide.uml#_qvV0EWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UuGjxEeSEBpDXoUmhnA" name="Session">
+          <modelElement href="CGuide.uml#_qtv4oWjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52UuWjxEeSEBpDXoUmhnA" name="key">
+        <modelElement href="CGuide.uml#_qvV0EmjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UumjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52Uu2jxEeSEBpDXoUmhnA" name="email">
+        <modelElement href="CGuide.uml#_qvWbIGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UvGjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52UvWjxEeSEBpDXoUmhnA" name="username">
+        <modelElement href="CGuide.uml#_qvWbIWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UvmjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52Uv2jxEeSEBpDXoUmhnA" name="password">
+        <modelElement href="CGuide.uml#_qvWbImjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UwGjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D52UwWjxEeSEBpDXoUmhnA" name="createPasswordChangedEmail" staticOperation="true">
+      <modelElement href="CGuide.uml#_qvY3YGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D52UwmjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D52Uw2jxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qvZecmjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UxGjxEeSEBpDXoUmhnA" name="Message">
+          <modelElement href="CGuide.uml#_qtuqgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D52UxWjxEeSEBpDXoUmhnA" name="mailSession">
+        <modelElement href="CGuide.uml#_qvY3YWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UxmjxEeSEBpDXoUmhnA" name="Session">
+          <modelElement href="CGuide.uml#_qtv4oWjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52Ux2jxEeSEBpDXoUmhnA" name="key">
+        <modelElement href="CGuide.uml#_qvY3YmjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UyGjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52UyWjxEeSEBpDXoUmhnA" name="email">
+        <modelElement href="CGuide.uml#_qvZecGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UymjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52Uy2jxEeSEBpDXoUmhnA" name="username">
+        <modelElement href="CGuide.uml#_qvZecWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52UzGjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D52UzWjxEeSEBpDXoUmhnA" name="createRecoveryEmail" staticOperation="true">
+      <modelElement href="CGuide.uml#_qvbToGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D52UzmjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D52Uz2jxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qvb6sWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52U0GjxEeSEBpDXoUmhnA" name="Message">
+          <modelElement href="CGuide.uml#_qtuqgGjwEeSEBpDXoUmhnA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D52U0WjxEeSEBpDXoUmhnA" name="mailSession">
+        <modelElement href="CGuide.uml#_qvbToWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52U0mjxEeSEBpDXoUmhnA" name="Session">
+          <modelElement href="CGuide.uml#_qtv4oWjwEeSEBpDXoUmhnA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52U02jxEeSEBpDXoUmhnA" name="email">
+        <modelElement href="CGuide.uml#_qvbTomjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52U1GjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52U1WjxEeSEBpDXoUmhnA" name="password">
+        <modelElement href="CGuide.uml#_qvbTo2jwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52U1mjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D52U12jxEeSEBpDXoUmhnA" name="username">
+        <modelElement href="CGuide.uml#_qvb6sGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D52U2GjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_D6JPoGjxEeSEBpDXoUmhnA" comments="_D6AFsGjxEeSEBpDXoUmhnA" targetConnectionVisual="_D6AFsWjxEeSEBpDXoUmhnA" name="PasswordHashUtils">
+    <modelElement href="CGuide.uml#_qW10gGjwEeSEBpDXoUmhnA"/>
+    <visualProperties xmi:id="_D6JPoWjxEeSEBpDXoUmhnA" position="1392.0,50.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_D6JPomjxEeSEBpDXoUmhnA" label="+"/>
+    <operations xmi:id="_D6JPo2jxEeSEBpDXoUmhnA" name="generateSaltedHash" staticOperation="true">
+      <modelElement href="CGuide.uml#_qW3psGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D6JPpGjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D6JPpWjxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qW3psmjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D6JPpmjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D6JPp2jxEeSEBpDXoUmhnA" name="password">
+        <modelElement href="CGuide.uml#_qW3psWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D6JPqGjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D6JPqWjxEeSEBpDXoUmhnA" name="generateSaltedHash" staticOperation="true">
+      <modelElement href="CGuide.uml#_qW430GjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D6JPqmjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D6JPq2jxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qW5e4WjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D6JPrGjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D6JPrWjxEeSEBpDXoUmhnA" name="password">
+        <modelElement href="CGuide.uml#_qW430WjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D6JPrmjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D6JPr2jxEeSEBpDXoUmhnA" name="saltPhrase">
+        <modelElement href="CGuide.uml#_qW5e4GjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D6JPsGjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_D6JPsWjxEeSEBpDXoUmhnA" name="generateSaltedHash" staticOperation="true">
+      <modelElement href="CGuide.uml#_qW6tAGjwEeSEBpDXoUmhnA"/>
+      <visibility xmi:id="_D6JPsmjxEeSEBpDXoUmhnA" label="+"/>
+      <outParameters xmi:id="_D6JPs2jxEeSEBpDXoUmhnA">
+        <modelElement href="CGuide.uml#_qW77IGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D6JPtGjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_D6JPtWjxEeSEBpDXoUmhnA" name="password">
+        <modelElement href="CGuide.uml#_qW7UEGjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D6JPtmjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D6JPt2jxEeSEBpDXoUmhnA" name="saltPhrase">
+        <modelElement href="CGuide.uml#_qW7UEWjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D6JPuGjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_D6JPuWjxEeSEBpDXoUmhnA" name="algorithm">
+        <modelElement href="CGuide.uml#_qW7UEmjwEeSEBpDXoUmhnA"/>
+        <type xmi:id="_D6JPumjxEeSEBpDXoUmhnA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
