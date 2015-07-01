@@ -33,8 +33,8 @@ public final class Manager {
 	private DataSource ds = null;
 	private String jdbcDriver = "com.mysql.jdbc.Driver";
 	private String jdbcUrl = "jdbc:mysql://localhost:3306/cguide";
-	private String jdbcUsername = "cguide";
-	private String jdbcPassword = "1PB1NX4T";
+	private String jdbcUsername = "root";
+	private String jdbcPassword = "123";
 
 	/**
 	 * Returns the manager singleton instance.
