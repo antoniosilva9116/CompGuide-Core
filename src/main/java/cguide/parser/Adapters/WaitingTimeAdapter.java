@@ -8,8 +8,6 @@ package cguide.parser.Adapters;
 import cguide.execution.entities.Action;
 import cguide.execution.entities.ClinicalTask;
 import cguide.execution.entities.Decision;
-import cguide.execution.entities.Duration;
-import cguide.execution.entities.Periodicity;
 import cguide.execution.entities.Plan;
 import cguide.execution.entities.Question;
 import cguide.execution.entities.WaitingTime;
