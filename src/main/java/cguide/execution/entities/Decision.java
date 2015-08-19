@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class Decision extends ClinicalTask {
     private ArrayList<Option> options;
+    private WaitingTime waitingTime;
 
     public Decision(){
          options = new ArrayList<Option>();
@@ -45,5 +46,13 @@ public class Decision extends ClinicalTask {
 
     public void addOption(Option option) {
         this.options.add(option);
+    }
+
+    public WaitingTime getWaitingTime() {
+        return waitingTime;
+    }
+
+    public void setWaitingTime(WaitingTime waitingTime) {
+        this.waitingTime = waitingTime;
     }
 }

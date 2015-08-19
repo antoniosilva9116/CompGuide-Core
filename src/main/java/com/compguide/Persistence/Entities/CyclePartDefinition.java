@@ -32,8 +32,11 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "CyclePartDefinition.findAll", query = "SELECT c FROM CyclePartDefinition c"),
+    @NamedQuery(name = "CyclePartDefinition.findByDurationID", query = "SELECT c FROM CyclePartDefinition c WHERE c.durationID = :durationID"),
+    @NamedQuery(name = "CyclePartDefinition.findByCyclePartPeriodicityID", query = "SELECT c FROM CyclePartDefinition c WHERE c.cyclePartPeriodicityID = :cyclePartPeriodicityID"),
     @NamedQuery(name = "CyclePartDefinition.findByCyclePartDefinitionID", query = "SELECT c FROM CyclePartDefinition c WHERE c.cyclePartDefinitionID = :cyclePartDefinitionID")})
 public class CyclePartDefinition implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,6 +53,11 @@ public class CyclePartDefinition implements Serializable {
     private CyclePartPeriodicity cyclePartPeriodicityID;
 
     public CyclePartDefinition() {
+    }
+
+    public CyclePartDefinition(Duration durationID, CyclePartPeriodicity cyclePartPeriodicityID) {
+        this.durationID = durationID;
+        this.cyclePartPeriodicityID = cyclePartPeriodicityID;
     }
 
     public CyclePartDefinition(Integer cyclePartDefinitionID) {
@@ -90,6 +98,21 @@ public class CyclePartDefinition implements Serializable {
         this.cyclePartPeriodicityID = cyclePartPeriodicityID;
     }
 
+    public boolean asDuration() {
+        if (durationID != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean asPeriodicity() {
+        if (cyclePartPeriodicityID != null) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -114,5 +137,5 @@ public class CyclePartDefinition implements Serializable {
     public String toString() {
         return "com.compguide.Persistence.Entities.CyclePartDefinition[ cyclePartDefinitionID=" + cyclePartDefinitionID + " ]";
     }
-    
+
 }

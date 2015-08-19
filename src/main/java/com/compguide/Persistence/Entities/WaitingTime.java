@@ -35,8 +35,11 @@ import org.codehaus.jackson.annotate.JsonIgnore;
     @NamedQuery(name = "WaitingTime.findByWaitingTimeID", query = "SELECT w FROM WaitingTime w WHERE w.waitingTimeID = :waitingTimeID"),
     @NamedQuery(name = "WaitingTime.findByExactWaitingTime", query = "SELECT w FROM WaitingTime w WHERE w.exactWaitingTime = :exactWaitingTime"),
     @NamedQuery(name = "WaitingTime.findByMinWaitingTime", query = "SELECT w FROM WaitingTime w WHERE w.minWaitingTime = :minWaitingTime"),
-    @NamedQuery(name = "WaitingTime.findByMaxWaitingTime", query = "SELECT w FROM WaitingTime w WHERE w.maxWaitingTime = :maxWaitingTime")})
+    @NamedQuery(name = "WaitingTime.findByMaxWaitingTime", query = "SELECT w FROM WaitingTime w WHERE w.maxWaitingTime = :maxWaitingTime"),
+    @NamedQuery(name = "WaitingTime.findByMinMaxWaitingTimeAndTemporalUnitID", query = "SELECT w FROM WaitingTime w WHERE w.minWaitingTime = :minWaitingTime AND w.maxWaitingTime = :maxWaitingTime AND w.temporalUnitID = :temporalUnitID"),
+    @NamedQuery(name = "WaitingTime.findByExactWaitingTimeAndTemporalUnitID", query = "SELECT w FROM WaitingTime w WHERE w.exactWaitingTime = :exactWaitingTime AND w.temporalUnitID = :temporalUnitID")})
 public class WaitingTime implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -57,6 +60,23 @@ public class WaitingTime implements Serializable {
     private TemporalUnit temporalUnitID;
 
     public WaitingTime() {
+    }
+
+    public WaitingTime(Double minWaitingTime, Double maxWaitingTime) {
+        this.exactWaitingTime = exactWaitingTime;
+        this.minWaitingTime = minWaitingTime;
+        this.maxWaitingTime = maxWaitingTime;
+    }
+
+    public WaitingTime(Double exactWaitingTime, Double minWaitingTime, Double maxWaitingTime, TemporalUnit temporalUnitID) {
+        this.exactWaitingTime = exactWaitingTime;
+        this.minWaitingTime = minWaitingTime;
+        this.maxWaitingTime = maxWaitingTime;
+        this.temporalUnitID = temporalUnitID;
+    }
+
+    public WaitingTime(Double exactWaitingTime) {
+        this.exactWaitingTime = exactWaitingTime;
     }
 
     public WaitingTime(Integer waitingTimeID) {
@@ -113,6 +133,20 @@ public class WaitingTime implements Serializable {
         this.temporalUnitID = temporalUnitID;
     }
 
+    public boolean asExactValue() {
+        if (exactWaitingTime != null) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean asInterval() {
+        if (minWaitingTime != null && maxWaitingTime != null) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -137,5 +171,5 @@ public class WaitingTime implements Serializable {
     public String toString() {
         return "com.compguide.Persistence.Entities.WaitingTime[ waitingTimeID=" + waitingTimeID + " ]";
     }
-    
+
 }

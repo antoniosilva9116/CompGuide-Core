@@ -36,6 +36,7 @@ import org.codehaus.jackson.annotate.JsonIgnore;
     @NamedQuery(name = "TemporalUnit.findByTemporalUnitID", query = "SELECT t FROM TemporalUnit t WHERE t.temporalUnitID = :temporalUnitID"),
     @NamedQuery(name = "TemporalUnit.findByValue", query = "SELECT t FROM TemporalUnit t WHERE t.value = :value")})
 public class TemporalUnit implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,6 +64,10 @@ public class TemporalUnit implements Serializable {
 
     public TemporalUnit(Integer temporalUnitID) {
         this.temporalUnitID = temporalUnitID;
+    }
+
+    public TemporalUnit(String value) {
+        this.value = value;
     }
 
     public TemporalUnit(Integer temporalUnitID, String value) {
@@ -160,5 +165,5 @@ public class TemporalUnit implements Serializable {
     public String toString() {
         return "com.compguide.Persistence.Entities.TemporalUnit[ temporalUnitID=" + temporalUnitID + " ]";
     }
-    
+
 }

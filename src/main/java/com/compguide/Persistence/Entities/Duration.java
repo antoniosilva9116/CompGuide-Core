@@ -35,8 +35,11 @@ import org.codehaus.jackson.annotate.JsonIgnore;
     @NamedQuery(name = "Duration.findByDurationID", query = "SELECT d FROM Duration d WHERE d.durationID = :durationID"),
     @NamedQuery(name = "Duration.findByMinDurationValue", query = "SELECT d FROM Duration d WHERE d.minDurationValue = :minDurationValue"),
     @NamedQuery(name = "Duration.findByMaxDurationValue", query = "SELECT d FROM Duration d WHERE d.maxDurationValue = :maxDurationValue"),
+    @NamedQuery(name = "Duration.findByDurationValueANDTemporalUnit", query = "SELECT d FROM Duration d WHERE d.durationValue = :durationValue AND d.temporalUnitID = :temporalUnitID"),
+    @NamedQuery(name = "Duration.findByMinMaxDurationValueAndTemporalUnit", query = "SELECT d FROM Duration d WHERE d.maxDurationValue = :maxDurationValue AND d.minDurationValue = :minDurationValue AND d.temporalUnitID = :temporalUnitID"),
     @NamedQuery(name = "Duration.findByDurationValue", query = "SELECT d FROM Duration d WHERE d.durationValue = :durationValue")})
 public class Duration implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,7 +52,7 @@ public class Duration implements Serializable {
     @Column(name = "MaxDurationValue")
     private Double maxDurationValue;
     @Column(name = "DurationValue")
-    private Integer durationValue;
+    private Double durationValue;
     @OneToMany(mappedBy = "durationID")
     private List<TemporalElement> temporalElementList;
     @JoinColumn(name = "TemporalUnitID", referencedColumnName = "TemporalUnitID")
@@ -63,6 +66,19 @@ public class Duration implements Serializable {
     private List<CyclePartDefinition> cyclePartDefinitionList;
 
     public Duration() {
+    }
+
+    public Duration(Double minDurationValue, Double maxDurationValue, Double durationValue, TemporalUnit temporalUnitID) {
+        this.minDurationValue = minDurationValue;
+        this.maxDurationValue = maxDurationValue;
+        this.durationValue = durationValue;
+        this.temporalUnitID = temporalUnitID;
+    }
+
+    public Duration(Double minDurationValue, Double maxDurationValue, Double durationValue) {
+        this.minDurationValue = minDurationValue;
+        this.maxDurationValue = maxDurationValue;
+        this.durationValue = durationValue;
     }
 
     public Duration(Integer durationID) {
@@ -93,11 +109,11 @@ public class Duration implements Serializable {
         this.maxDurationValue = maxDurationValue;
     }
 
-    public Integer getDurationValue() {
+    public Double getDurationValue() {
         return durationValue;
     }
 
-    public void setDurationValue(Integer durationValue) {
+    public void setDurationValue(Double durationValue) {
         this.durationValue = durationValue;
     }
 
@@ -149,6 +165,20 @@ public class Duration implements Serializable {
         this.cyclePartDefinitionList = cyclePartDefinitionList;
     }
 
+    public boolean asExactValue() {
+        if (durationValue != null) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean asInterval() {
+        if (minDurationValue != null && maxDurationValue != null) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -173,5 +203,5 @@ public class Duration implements Serializable {
     public String toString() {
         return "com.compguide.Persistence.Entities.Duration[ durationID=" + durationID + " ]";
     }
-    
+
 }

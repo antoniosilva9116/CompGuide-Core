@@ -6,11 +6,8 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 
 /**
- * Created with IntelliJ IDEA.
- * User: tiago
- * Date: 20-08-2013
- * Time: 23:23
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA. User: tiago Date: 20-08-2013 Time: 23:23 To
+ * change this template use File | Settings | File Templates.
  */
 public class Action extends ClinicalTask {
 
@@ -18,13 +15,14 @@ public class Action extends ClinicalTask {
     private Outcome outcome;
     private Duration duration;
     private Periodicity periodicity;
+    private WaitingTime waitingTime;
 
-    public Action(){
+    public Action() {
         clinicalActions = new ArrayList<ClinicalAction>();
         outcome = new Outcome();
     }
 
-    public static Action fromJson(String json){
+    public static Action fromJson(String json) {
 
         Gson gson = new GsonBuilder()
                 .registerTypeHierarchyAdapter(ClinicalTask.class, new ClinicalTaskAdapter())
@@ -33,7 +31,7 @@ public class Action extends ClinicalTask {
         return gson.fromJson(json, Action.class);
     }
 
-    public String toJson(){
+    public String toJson() {
         Gson gson = new GsonBuilder()
                 .registerTypeHierarchyAdapter(ClinicalTask.class, new ClinicalTaskAdapter())
                 .registerTypeHierarchyAdapter(ClinicalAction.class, new ClinicalActionAdapter())
@@ -42,10 +40,17 @@ public class Action extends ClinicalTask {
         return gson.toJson(this);
     }
 
-
-    public void addClinicalAction(ClinicalAction clinicalAction){
+    public void addClinicalAction(ClinicalAction clinicalAction) {
         this.clinicalActions.add(clinicalAction);
 
+    }
+
+    public WaitingTime getWaitingTime() {
+        return waitingTime;
+    }
+
+    public void setWaitingTime(WaitingTime waitingTime) {
+        this.waitingTime = waitingTime;
     }
 
     public Periodicity getPeriodicity() {
@@ -78,5 +83,29 @@ public class Action extends ClinicalTask {
 
     public void setOutcome(Outcome outcome) {
         this.outcome = outcome;
+    }
+
+    public boolean asDuration() {
+        if (duration != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean haveWaitingTime() {
+        if (waitingTime != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean asPeriodicity() {
+        if (periodicity != null) {
+            return true;
+        }
+
+        return false;
     }
 }

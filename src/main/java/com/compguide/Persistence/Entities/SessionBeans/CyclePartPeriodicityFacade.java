@@ -6,9 +6,17 @@
 package com.compguide.Persistence.Entities.SessionBeans;
 
 import com.compguide.Persistence.Entities.CyclePartPeriodicity;
+import com.compguide.Persistence.Entities.Duration;
+import com.compguide.Persistence.Entities.Task;
+import com.compguide.Persistence.Entities.TemporalUnit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -16,6 +24,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class CyclePartPeriodicityFacade extends AbstractFacade<CyclePartPeriodicity> {
+
     @PersistenceContext(unitName = "CGuide_CGuide_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
@@ -27,5 +36,75 @@ public class CyclePartPeriodicityFacade extends AbstractFacade<CyclePartPeriodic
     public CyclePartPeriodicityFacade() {
         super(CyclePartPeriodicity.class);
     }
-    
+
+    public List<CyclePartPeriodicity> findByDurationID(Duration durationID) {
+        List<CyclePartPeriodicity> cyclePartPeriodicity = new ArrayList<CyclePartPeriodicity>();
+
+        Query query = em.createNamedQuery("CyclePartPeriodicity.findByDurationID", CyclePartPeriodicity.class);
+        query.setParameter("durationID", durationID);
+        try {
+            cyclePartPeriodicity = query.getResultList();
+        } catch (javax.ejb.EJBException | javax.persistence.NoResultException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+        return cyclePartPeriodicity;
+    }
+
+    public List<CyclePartPeriodicity> findByRepetitionValue(Integer repetitionValue) {
+        List<CyclePartPeriodicity> cyclePartPeriodicity = null;
+
+        Query query = em.createNamedQuery("CyclePartPeriodicity.findByRepetitionValue", CyclePartPeriodicity.class);
+        query.setParameter("repetitionValue", repetitionValue);
+        try {
+            cyclePartPeriodicity = query.getResultList();
+        } catch (javax.ejb.EJBException | javax.persistence.NoResultException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+        return cyclePartPeriodicity;
+    }
+
+    public CyclePartPeriodicity findByTaskID(Task taskID) {
+        CyclePartPeriodicity cyclePartPeriodicity = null;
+
+        Query query = em.createNamedQuery("CyclePartPeriodicity.findByTaskID", CyclePartPeriodicity.class);
+        query.setParameter("taskID", taskID);
+        try {
+            cyclePartPeriodicity = (CyclePartPeriodicity) query.getSingleResult();
+        } catch (javax.ejb.EJBException | javax.persistence.NoResultException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+        return cyclePartPeriodicity;
+    }
+
+    public CyclePartPeriodicity findByPeriodicityValueTemporalUnitAndDurationID(Duration durationID, TemporalUnit temporalUnitID, Double periodicityValue) {
+        CyclePartPeriodicity cyclePartPeriodicity = null;
+
+        Query query = em.createNamedQuery("CyclePartPeriodicity.findByPeriodicityValueTemporalUnitAndDurationID", CyclePartPeriodicity.class);
+        query.setParameter("durationID", durationID);
+        query.setParameter("temporalUnitID", temporalUnitID);
+        query.setParameter("periodicityValue", periodicityValue);
+
+        try {
+            cyclePartPeriodicity = (CyclePartPeriodicity) query.getSingleResult();
+        } catch (javax.ejb.EJBException | javax.persistence.NoResultException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+        return cyclePartPeriodicity;
+    }
+
+    public CyclePartPeriodicity findByPeriodicityValueTemporalUnitAndRepetitonValue(Integer repetitionValue, TemporalUnit temporalUnitID, Double periodicityValue) {
+        CyclePartPeriodicity cyclePartPeriodicity = null;
+
+        Query query = em.createNamedQuery("CyclePartPeriodicity.findByPeriodicityValueTemporalUnitAndRepetitionValue", CyclePartPeriodicity.class);
+        query.setParameter("repetitionValue", repetitionValue);
+        query.setParameter("temporalUnitID", temporalUnitID);
+        query.setParameter("periodicityValue", periodicityValue);
+
+        try {
+            cyclePartPeriodicity = (CyclePartPeriodicity) query.getSingleResult();
+        } catch (javax.ejb.EJBException | javax.persistence.NoResultException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+        return cyclePartPeriodicity;
+    }
 }

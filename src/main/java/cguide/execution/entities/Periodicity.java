@@ -5,52 +5,60 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 /**
- * Created with IntelliJ IDEA.
- * User: tiago
- * Date: 20-08-2013
- * Time: 22:53
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA. User: tiago Date: 20-08-2013 Time: 22:53 To
+ * change this template use File | Settings | File Templates.
  */
-public class Periodicity  {
+public class Periodicity {
+
     private String id;
-    private Double minPeriodicityValue;
-    private Double maxPeriodicityValue;
     private ArrayList<ConditionSet> stopConditionSet;
     private Integer repetitionValue;
     private String temporalUnit;
+    private Double periodicityValue;
+    private Duration duration;
+    private CyclePartDefinition cyclePartDefinition;
 
-    public Periodicity(){
-           stopConditionSet = new ArrayList<ConditionSet>();
+    public Periodicity() {
+        stopConditionSet = new ArrayList<ConditionSet>();
     }
 
-    public static Periodicity fromJson(String json){
+    public static Periodicity fromJson(String json) {
         Gson gson = new Gson();
         return gson.fromJson(json, Periodicity.class);
     }
 
-    public String toJson(){
+    public String toJson() {
         Gson gson = new Gson();
         return gson.toJson(this);
     }
-    public void  addStopConditionSet(ConditionSet conditionSet){
+
+    public void addStopConditionSet(ConditionSet conditionSet) {
         this.stopConditionSet.add(conditionSet);
     }
+
     public Integer getRepetitionValue() {
         return repetitionValue;
+    }
+
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Duration duration) {
+        this.duration = duration;
+    }
+
+    public CyclePartDefinition getCyclePartDefinition() {
+        return cyclePartDefinition;
+    }
+
+    public void setCyclePartDefinition(CyclePartDefinition cyclePartDefinition) {
+        this.cyclePartDefinition = cyclePartDefinition;
     }
 
     public void setRepetitionValue(Integer repetitionValue) {
         this.repetitionValue = repetitionValue;
     }
-
-    public Double getMinPeriodicityValue() {
-        return minPeriodicityValue;
-    }
-
-    public void setMinPeriodicityValue(Double minPeriodicityValue) {
-        this.minPeriodicityValue = minPeriodicityValue;
-    }
-
 
     public String getTemporalUnit() {
         return temporalUnit;
@@ -68,19 +76,42 @@ public class Periodicity  {
         this.id = id;
     }
 
-    public Double getMaxPeriodicityValue() {
-        return maxPeriodicityValue;
-    }
-
-    public void setMaxPeriodicityValue(Double maxPeriodicityValue) {
-        this.maxPeriodicityValue = maxPeriodicityValue;
-    }
-
     public ArrayList<ConditionSet> getStopConditionSet() {
         return stopConditionSet;
     }
 
+    public Double getPeriodicityValue() {
+        return periodicityValue;
+    }
+
+    public void setPeriodicityValue(Double periodicityValue) {
+        this.periodicityValue = periodicityValue;
+    }
+
     public void setStopConditionSet(ArrayList<ConditionSet> stopConditionSet) {
         this.stopConditionSet = stopConditionSet;
+    }
+
+    public boolean asRepetition() {
+        if (repetitionValue != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean asDuration() {
+        if (duration != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean haveCyclePart() {
+        if (cyclePartDefinition != null) {
+            return true;
+        }
+        return false;
     }
 }

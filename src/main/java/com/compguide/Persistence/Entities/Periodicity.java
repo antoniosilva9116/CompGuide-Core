@@ -36,8 +36,13 @@ import org.codehaus.jackson.annotate.JsonIgnore;
     @NamedQuery(name = "Periodicity.findAll", query = "SELECT p FROM Periodicity p"),
     @NamedQuery(name = "Periodicity.findByPeriodicityID", query = "SELECT p FROM Periodicity p WHERE p.periodicityID = :periodicityID"),
     @NamedQuery(name = "Periodicity.findByRepetitionValue", query = "SELECT p FROM Periodicity p WHERE p.repetitionValue = :repetitionValue"),
+    @NamedQuery(name = "Periodicity.findByPeriodicityValueTemporalUnitDurationIDAndCyclePartDefinitionID", query = "SELECT p FROM Periodicity p WHERE p.periodicityValue = :periodicityValue AND p.temporalUnitID = :temporalUnitID AND p.durationID = :durationID AND p.cyclePartDefinitionID = :cyclePartDefinitionID"),
+    @NamedQuery(name = "Periodicity.findByPeriodicityValueTemporalUnitAndDurationID", query = "SELECT p FROM Periodicity p WHERE p.periodicityValue = :periodicityValue AND p.temporalUnitID = :temporalUnitID AND p.durationID = :durationID"),
+    @NamedQuery(name = "Periodicity.findByPeriodicityValueTemporalUnitAndRepetitionValue", query = "SELECT p FROM Periodicity p WHERE p.periodicityValue = :periodicityValue AND p.temporalUnitID = :temporalUnitID AND p.repetitionValue = :repetitionValue"),
+    @NamedQuery(name = "Periodicity.findByPeriodicityValueTemporalUnitRepetitionValueAndCyclePartDefinition", query = "SELECT p FROM Periodicity p WHERE p.periodicityValue = :periodicityValue AND p.temporalUnitID = :temporalUnitID AND p.repetitionValue = :repetitionValue AND p.cyclePartDefinitionID = :cyclePartDefinitionID"),
     @NamedQuery(name = "Periodicity.findByPeriodicityValue", query = "SELECT p FROM Periodicity p WHERE p.periodicityValue = :periodicityValue")})
 public class Periodicity implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,6 +70,23 @@ public class Periodicity implements Serializable {
     private Duration durationID;
 
     public Periodicity() {
+    }
+
+    public Periodicity(double periodicityValue, Integer repetitionValue) {
+        this.repetitionValue = repetitionValue;
+        this.periodicityValue = periodicityValue;
+    }
+
+    public Periodicity(double periodicityValue) {
+        this.periodicityValue = periodicityValue;
+    }   
+
+    public Periodicity(Integer repetitionValue, double periodicityValue, CyclePartDefinition cyclePartDefinitionID, TemporalUnit temporalUnitID, Duration durationID) {
+        this.repetitionValue = repetitionValue;
+        this.periodicityValue = periodicityValue;
+        this.cyclePartDefinitionID = cyclePartDefinitionID;
+        this.temporalUnitID = temporalUnitID;
+        this.durationID = durationID;
     }
 
     public Periodicity(Integer periodicityID) {
@@ -144,6 +166,29 @@ public class Periodicity implements Serializable {
         this.durationID = durationID;
     }
 
+    public boolean asRepetition() {
+        if (repetitionValue != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean asDuration() {
+        if (durationID != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean haveCyclePart() {
+        if (cyclePartDefinitionID != null) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -168,5 +213,5 @@ public class Periodicity implements Serializable {
     public String toString() {
         return "com.compguide.Persistence.Entities.Periodicity[ periodicityID=" + periodicityID + " ]";
     }
-    
+
 }

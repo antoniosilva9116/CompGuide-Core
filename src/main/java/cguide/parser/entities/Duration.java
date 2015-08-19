@@ -13,6 +13,7 @@ public class Duration {
     private String id;
     private Double maxDurationValue;
     private Double minDurationValue;
+    private Double durationValue;
     private String temporalUnit;
     public Duration(){
     }
@@ -47,6 +48,14 @@ public class Duration {
         this.minDurationValue = minDurationValue;
     }
 
+    public Double getDurationValue() {
+        return durationValue;
+    }
+
+    public void setDurationValue(Double durationValue) {
+        this.durationValue = durationValue;
+    }
+    
     public Double getMaxDurationValue() {
         return maxDurationValue;
     }

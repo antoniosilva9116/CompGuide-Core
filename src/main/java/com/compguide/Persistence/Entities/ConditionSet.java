@@ -54,6 +54,10 @@ public class ConditionSet implements Serializable {
     public ConditionSet() {
     }
 
+    public ConditionSet(String identifier) {
+        this.identifier = identifier;
+    }
+    
     public ConditionSet(Integer idconditionset) {
         this.idconditionset = idconditionset;
     }

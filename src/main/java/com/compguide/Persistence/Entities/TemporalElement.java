@@ -28,8 +28,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "TemporalElement.findAll", query = "SELECT t FROM TemporalElement t"),
+    @NamedQuery(name = "TemporalElement.findByTaskID", query = "SELECT t FROM TemporalElement t WHERE t.taskID = :taskID"),
+    @NamedQuery(name = "TemporalElement.findByDurationID", query = "SELECT t FROM TemporalElement t WHERE t.durationID = :durationID"),
+    @NamedQuery(name = "TemporalElement.findByWaitingTimeID", query = "SELECT t FROM TemporalElement t WHERE t.waitingTimeID = :waitingTimeID"),
+    @NamedQuery(name = "TemporalElement.findByPeriodicityID", query = "SELECT t FROM TemporalElement t WHERE t.periodicityID = :periodicityID"),
+    @NamedQuery(name = "TemporalElement.findByDurationIDAndWaitingTimeID", query = "SELECT t FROM TemporalElement t WHERE t.durationID = :durationID AND t.waitingTimeID = :waitingTimeID"),
+    @NamedQuery(name = "TemporalElement.findByPeriodicityIDAndWaitingTimeID", query = "SELECT t FROM TemporalElement t WHERE t.periodicityID = :periodicityID AND t.waitingTimeID = :waitingTimeID"),
     @NamedQuery(name = "TemporalElement.findByTemporalElementID", query = "SELECT t FROM TemporalElement t WHERE t.temporalElementID = :temporalElementID")})
 public class TemporalElement implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,6 +57,12 @@ public class TemporalElement implements Serializable {
     private Periodicity periodicityID;
 
     public TemporalElement() {
+    }
+
+    public TemporalElement(Duration durationID, WaitingTime waitingTimeID, Periodicity periodicityID) {
+        this.durationID = durationID;
+        this.waitingTimeID = waitingTimeID;
+        this.periodicityID = periodicityID;
     }
 
     public TemporalElement(Integer temporalElementID) {
@@ -120,5 +133,29 @@ public class TemporalElement implements Serializable {
     public String toString() {
         return "com.compguide.Persistence.Entities.TemporalElement[ temporalElementID=" + temporalElementID + " ]";
     }
-    
+
+    public boolean asDuration() {
+        if (durationID != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean haveWaitingTime() {
+        if (waitingTimeID != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean asPeriodicity() {
+        if (periodicityID != null) {
+            return true;
+        }
+
+        return false;
+    }
+
 }

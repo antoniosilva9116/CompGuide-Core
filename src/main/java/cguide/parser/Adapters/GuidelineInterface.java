@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cguide.parser;
+package cguide.parser.Adapters;
 
 /**
  *
  * @author António
  */
-public class TemporalElementAdapter {
-    
+public interface GuidelineInterface {
+    public GuidelineInterface fetchObjectFromOwl(String name);
+    public Object getObject();
 }

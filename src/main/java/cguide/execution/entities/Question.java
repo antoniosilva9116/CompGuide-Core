@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class Question extends ClinicalTask {
            private ArrayList<Parameter> parameters;
+           private WaitingTime waitingTime;
 
     public Question(){
         super();
@@ -52,4 +53,14 @@ public class Question extends ClinicalTask {
     public void setParameters(ArrayList<Parameter> parameters) {
         this.parameters = parameters;
     }
+
+    public WaitingTime getWaitingTime() {
+        return waitingTime;
+    }
+
+    public void setWaitingTime(WaitingTime waitingTime) {
+        this.waitingTime = waitingTime;
+    }
+    
+    
 }

@@ -6,9 +6,14 @@
 package com.compguide.Persistence.Entities.SessionBeans;
 
 import com.compguide.Persistence.Entities.CyclePartDefinition;
+import com.compguide.Persistence.Entities.CyclePartPeriodicity;
+import com.compguide.Persistence.Entities.Duration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -26,6 +31,34 @@ public class CyclePartDefinitionFacade extends AbstractFacade<CyclePartDefinitio
 
     public CyclePartDefinitionFacade() {
         super(CyclePartDefinition.class);
+    }
+    
+    public CyclePartDefinition findByDurationID(Duration durationID) {
+        CyclePartDefinition cyclePartDefinition = null;
+
+        Query query = em.createNamedQuery("CyclePartDefinition.findByDurationID", CyclePartDefinition.class);
+        query.setParameter("durationID", durationID);
+        
+        try {
+            cyclePartDefinition = (CyclePartDefinition) query.getSingleResult();
+        } catch (javax.ejb.EJBException | javax.persistence.NoResultException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+        return cyclePartDefinition;
+    }
+
+    public CyclePartDefinition findByCyclePartPeriodicityID(CyclePartPeriodicity cyclePartPeriodicityID) {
+        CyclePartDefinition cyclePartDefinition = null;
+
+        Query query = em.createNamedQuery("CyclePartDefinition.findByCyclePartPeriodicityID", CyclePartDefinition.class);
+        query.setParameter("cyclePartPeriodicityID", cyclePartPeriodicityID);
+        
+        try {
+            cyclePartDefinition = (CyclePartDefinition) query.getSingleResult();
+        } catch (javax.ejb.EJBException | javax.persistence.NoResultException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+        return cyclePartDefinition;
     }
     
 }

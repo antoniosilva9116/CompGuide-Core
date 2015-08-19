@@ -11,6 +11,7 @@ import com.compguide.Persistence.Entities.SessionBeans.CyclePartPeriodicityFacad
 import com.compguide.Persistence.Entities.SessionBeans.DurationFacade;
 import com.compguide.Persistence.Entities.SessionBeans.PeriodicityFacade;
 import com.compguide.Persistence.Entities.SessionBeans.StopConditionSetFacade;
+import com.compguide.Persistence.Entities.SessionBeans.TemporalElementFacade;
 import com.compguide.Persistence.Entities.SessionBeans.TemporalUnitFacade;
 import com.compguide.Persistence.Entities.SessionBeans.WaitingTimeFacade;
 import java.util.ArrayList;
@@ -22,13 +23,15 @@ import java.util.List;
  */
 public class GuidelineComposite {
 
-    List<Duration> durations = new ArrayList<Duration>();
-    List<Periodicity> periodicities = new ArrayList<Periodicity>();
-    List<WaitingTime> waitingTimes = new ArrayList<WaitingTime>();
-    List<CyclePartDefinition> cyclePartDefinitions = new ArrayList<CyclePartDefinition>();
-    List<CyclePartPeriodicity> cyclePartPeriodicities = new ArrayList<CyclePartPeriodicity>();
-    List<TemporalUnit> temporalUnits = new ArrayList<TemporalUnit>();
-    List<StopConditionSet> stopConditionSets = new ArrayList<StopConditionSet>();
+    private static GuidelineComposite instance;
+    private List<Duration> durations = new ArrayList<Duration>();
+    private List<Periodicity> periodicities = new ArrayList<Periodicity>();
+    private List<WaitingTime> waitingTimes = new ArrayList<WaitingTime>();
+    private List<CyclePartDefinition> cyclePartDefinitions = new ArrayList<CyclePartDefinition>();
+    private List<CyclePartPeriodicity> cyclePartPeriodicities = new ArrayList<CyclePartPeriodicity>();
+    private List<TemporalUnit> temporalUnits = new ArrayList<TemporalUnit>();
+    private List<StopConditionSet> stopConditionSets = new ArrayList<StopConditionSet>();
+    private List<TemporalElement> temporalElements = new ArrayList<TemporalElement>();
 
     private com.compguide.Persistence.Entities.SessionBeans.CyclePartDefinitionFacade ejbCyclePartDefinitionFacade;
     private com.compguide.Persistence.Entities.SessionBeans.CyclePartPeriodicityFacade ejbCyclePartPeriodicityFacade;
@@ -37,9 +40,17 @@ public class GuidelineComposite {
     private com.compguide.Persistence.Entities.SessionBeans.WaitingTimeFacade ejbWaitingTimeFacade;
     private com.compguide.Persistence.Entities.SessionBeans.StopConditionSetFacade ejbStopConditionSetFacade;
     private com.compguide.Persistence.Entities.SessionBeans.TemporalUnitFacade ejbTemporalUnitFacade;
+    private com.compguide.Persistence.Entities.SessionBeans.TemporalElementFacade ejbTemporalElementFacade;
 
     public GuidelineComposite() {
 
+    }
+
+    public synchronized static GuidelineComposite instance() {
+        if (instance == null) {
+            instance = new GuidelineComposite();
+        }
+        return instance;
     }
 
     public List<Duration> getDurations() {
@@ -98,6 +109,14 @@ public class GuidelineComposite {
         this.stopConditionSets = stopConditionSets;
     }
 
+    public List<TemporalElement> getTemporalElements() {
+        return temporalElements;
+    }
+
+    public void setTemporalElements(List<TemporalElement> temporalElements) {
+        this.temporalElements = temporalElements;
+    }
+
     public WaitingTimeFacade getWaitingTimeFacade() {
         if (ejbWaitingTimeFacade == null) {
             ejbWaitingTimeFacade = new WaitingTimeFacade();
@@ -145,6 +164,13 @@ public class GuidelineComposite {
             ejbTemporalUnitFacade = new TemporalUnitFacade();
         }
         return ejbTemporalUnitFacade;
+    }
+
+    public TemporalElementFacade getTemporalElementFacade() {
+        if (ejbTemporalElementFacade == null) {
+            ejbTemporalElementFacade = new TemporalElementFacade();
+        }
+        return ejbTemporalElementFacade;
     }
 
     public void addDuration(Duration duration) {
@@ -231,6 +257,18 @@ public class GuidelineComposite {
         }
     }
 
+    public void addTemporalElement(TemporalElement temporalElement) {
+        if (!temporalElements.contains(temporalElement)) {
+            temporalElements.add(temporalElement);
+        }
+    }
+
+    public void removeTemporalElement(TemporalElement temporalElement) {
+        if (!temporalElements.contains(temporalElement)) {
+            temporalElements.remove(temporalElement);
+        }
+    }
+
     public void storeAll() {
         if (durations.size() > 0) {
             for (Duration duration : durations) {
@@ -271,6 +309,12 @@ public class GuidelineComposite {
         if (temporalUnits.size() > 0) {
             for (TemporalUnit temporalUnit : temporalUnits) {
                 getTemporalUnitFacade().create(temporalUnit);
+            }
+        }
+
+        if (temporalElements.size() > 0) {
+            for (TemporalElement temporalElement : temporalElements) {
+                getTemporalElementFacade().create(temporalElement);
             }
         }
     }

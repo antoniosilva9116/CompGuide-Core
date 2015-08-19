@@ -1,41 +1,52 @@
-package cguide.parser.entities;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cguide.execution.entities;
 
-import cguide.execution.entities.CyclePartDefinition;
 import com.google.gson.Gson;
-
 import java.util.ArrayList;
 
 /**
- * Created with IntelliJ IDEA.
- * User: tiago
- * Date: 20-08-2013
- * Time: 22:53
- * To change this template use File | Settings | File Templates.
+ *
+ * @author António
  */
-public class Periodicity  {
+public class CyclePartPeriodicity {
+
     private String id;
     private ArrayList<ConditionSet> stopConditionSet;
     private Integer repetitionValue;
     private String temporalUnit;
     private Double periodicityValue;
-    private CyclePartDefinition cyclePartDefinition;
+    private Duration duration;
 
-    public Periodicity(){
-           stopConditionSet = new ArrayList<ConditionSet>();
+    public CyclePartPeriodicity() {
+        stopConditionSet = new ArrayList<ConditionSet>();
     }
 
-    public static Periodicity fromJson(String json){
+    public static CyclePartPeriodicity fromJson(String json) {
         Gson gson = new Gson();
-        return gson.fromJson(json, Periodicity.class);
+        return gson.fromJson(json, CyclePartPeriodicity.class);
     }
 
-    public String toJson(){
+    public String toJson() {
         Gson gson = new Gson();
         return gson.toJson(this);
     }
-    public void  addStopConditionSet(ConditionSet conditionSet){
+
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Duration duration) {
+        this.duration = duration;
+    }
+
+    public void addStopConditionSet(ConditionSet conditionSet) {
         this.stopConditionSet.add(conditionSet);
     }
+
     public Integer getRepetitionValue() {
         return repetitionValue;
     }
@@ -50,14 +61,6 @@ public class Periodicity  {
 
     public void setRepetitionValue(Integer repetitionValue) {
         this.repetitionValue = repetitionValue;
-    }
-
-    public CyclePartDefinition getCyclePartDefinition() {
-        return cyclePartDefinition;
-    }
-
-    public void setCyclePartDefinition(CyclePartDefinition cyclePartDefinition) {
-        this.cyclePartDefinition = cyclePartDefinition;
     }
 
     public String getTemporalUnit() {
@@ -83,4 +86,21 @@ public class Periodicity  {
     public void setStopConditionSet(ArrayList<ConditionSet> stopConditionSet) {
         this.stopConditionSet = stopConditionSet;
     }
+
+    public boolean asRepetition() {
+        if (repetitionValue != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean asDuration() {
+        if (duration != null) {
+            return true;
+        }
+
+        return false;
+    }
+
 }
