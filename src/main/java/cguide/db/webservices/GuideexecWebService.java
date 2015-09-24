@@ -22,19 +22,17 @@ import java.sql.Timestamp;
 import java.util.Calendar;
 
 /**
- * Created with IntelliJ IDEA.
- * User: tiago
- * Date: 31-07-2013
- * Time: 16:47
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA. User: tiago Date: 31-07-2013 Time: 16:47 To
+ * change this template use File | Settings | File Templates.
  */
 @Path("/guideexec")
 public class GuideexecWebService extends AbstractWebService {
 
     /**
-     * Method to retrieve guideexec's information.
-     * The request must contain a Cookie Header with a valid auth-token and the information
-     * will only be delivered if the user has permissions to access it
+     * Method to retrieve guideexec's information. The request must contain a
+     * Cookie Header with a valid auth-token and the information will only be
+     * delivered if the user has permissions to access it
+     *
      * @param idguideexec The username of the user
      * @return The information about the user in a json object
      */
@@ -42,124 +40,125 @@ public class GuideexecWebService extends AbstractWebService {
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @TypeHint(Guideexec.class)
-    @StatusCodes({@ResponseCode( code = 406, condition = "If mandatory parameters are missing"),
-            @ResponseCode( code = 500, condition = "If a problem with the database occurs"),
-            @ResponseCode( code = 403, condition = "If the auth-token is missing or has no privileges to access the information"),
-            @ResponseCode( code = 404, condition = "If the resource was not found"),
-            @ResponseCode( code = 200, condition = "If the resource is found")
+    @StatusCodes({
+        @ResponseCode(code = 406, condition = "If mandatory parameters are missing"),
+        @ResponseCode(code = 500, condition = "If a problem with the database occurs"),
+        @ResponseCode(code = 403, condition = "If the auth-token is missing or has no privileges to access the information"),
+        @ResponseCode(code = 404, condition = "If the resource was not found"),
+        @ResponseCode(code = 200, condition = "If the resource is found")
     })
     public Response guideexecDetails(@PathParam("id") String idguideexec) {
-        if (idguideexec==null)  {
+        if (idguideexec == null) {
             return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Mandatory params are missing").build();
         }
-        if (!isUser()){
+        if (!isUser()) {
             return Response.status(Response.Status.FORBIDDEN).entity("Private information").build();
         }
 
         boolean validUser = true;
         String guideexecJson = "";
         GuideexecBean guideexecBean = null;
-        try{
+        try {
             Integer.parseInt(idguideexec);
             guideexecBean = GuideexecManager.getInstance().getGuideexecBeanByID(idguideexec);
-        }catch (Exception e){
+        } catch (Exception e) {
             return Response.serverError().entity("Invalid  Id. Please send a integer number").build();
         }
-        if (guideexecBean != null){
+        if (guideexecBean != null) {
             guideexecJson = Guideexec.fromBean(guideexecBean).toJson();
             return Response.ok(guideexecJson, MediaType.APPLICATION_JSON_TYPE).build();
-        }else {
+        } else {
             return Response.status(Response.Status.NOT_FOUND).entity("Resource not found.").build();
         }
     }
+
     /**
-     * This method receives information about a given user to insert in the system
+     * This method receives information about a given user to insert in the
+     * system
      *
-     * @param idguideline       The id of the parser
-     * @param iduser            The nid of the user
-     * @param idpatient         The id of the patient
-     * @param description       the description
+     * @param idguideline The id of the parser
+     * @param iduser The nid of the user
+     * @param idpatient The id of the patient
+     * @param description the description
      * @param completed
      * @param nextTasks
      */
     @PUT
     @Path("/")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @StatusCodes({@ResponseCode( code = 406, condition = "If mandatory parameters are missing"),
-            @ResponseCode( code = 500, condition = "If a problem with the database occurs"),
-            @ResponseCode( code = 200, condition = "If the rating was successfully inserted"),
-            @ResponseCode( code = 403, condition = "If the auth-token is missing or has" +
-                    "no privileges to access the information")
+    @StatusCodes({
+        @ResponseCode(code = 406, condition = "If mandatory parameters are missing"),
+        @ResponseCode(code = 500, condition = "If a problem with the database occurs"),
+        @ResponseCode(code = 200, condition = "If the rating was successfully inserted"),
+        @ResponseCode(code = 403, condition = "If the auth-token is missing or has"
+                + "no privileges to access the information")
     })
-    public Response addGuideexec(@FormParam("idguideline")  String idguideline,
-                            @FormParam("iduser")            String iduser,
-                            @FormParam("description")         String description,
-                            @FormParam("completed")         String completed,
-                            @FormParam("nextTasks")         String nextTasks,
-                            @FormParam("idpatient")         String idpatient
-    )  {
+    public Response addGuideexec(@FormParam("idguideline") String idguideline,
+            @FormParam("iduser") String iduser,
+            @FormParam("description") String description,
+            @FormParam("completed") String completed,
+            @FormParam("nextTasks") String nextTasks,
+            @FormParam("idpatient") String idpatient
+    ) {
 
-        if (requestOwner == null){
+        if (requestOwner == null) {
             return Response.status(Response.Status.FORBIDDEN).entity("User not logged in").build();
         }
-        if (!validParam(idguideline) ||
-                !validParam(iduser) ||
-                !validParam(idpatient))  {
+        if (!validParam(idguideline)
+                || !validParam(iduser)
+                || !validParam(idpatient)) {
             return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Mandatory params are missing").build();
         }
-        GuideexecBean guideexecBean=GuideexecManager.getInstance().createGuideexecBean();
+        GuideexecBean guideexecBean = GuideexecManager.getInstance().createGuideexecBean();
         int key = 0;
-        try{
+        try {
 
             guideexecBean.setIdguideline(Long.parseLong(idguideline));
-        }catch (Exception e){
+        } catch (Exception e) {
             return Response.serverError().entity("Invalid parser Id. Please send a integer number").build();
         }
-        try{
+        try {
 
             guideexecBean.setIduser(Long.parseLong(iduser));
-        }catch (Exception e){
+        } catch (Exception e) {
             return Response.serverError().entity("Invalid user Id. Please send a integer number").build();
         }
-        if(validParam(nextTasks)){
+        if (validParam(nextTasks)) {
             guideexecBean.setNextTasks(nextTasks);
-        }
-        else{
+        } else {
             Gson gson = new Gson();
             GuidelineBean guidelinebean = GuidelineManager.getInstance().getGuidelineBeanByID(idguideline);
-            String firstPlan= guidelineHandler.getClinicalPracticeGuideline(guidelinebean.getIdentifier()).getPlan().getId();
+            guidelineHandler.loadGuideline();
+            String firstPlan = guidelineHandler.getClinicalPracticeGuideline(guidelinebean.getIdentifier()).getPlan().getId();
 
             //Sync Controller
 //            SyncController controller = new SyncController();
 //            controller.addTask(new TaskTriple(firstPlan,firstPlan,"-1"));
             //Task Controller
-
             TaskController controller = new TaskController();
-            controller.addTask(new TaskQuadruple(firstPlan,"-1","-1","-1"));
+            controller.addTask(new TaskQuadruple(firstPlan, "-1", "-1", "-1"));
 
             guideexecBean.setNextTasks(gson.toJson(controller));
         }
 
-        if(validParam(description)){
+        if (validParam(description)) {
             guideexecBean.setDescription(description);
         }
 
-
-        if(validParam(completed)){
-            try{
+        if (validParam(completed)) {
+            try {
 
                 guideexecBean.setCompleted(Boolean.parseBoolean(iduser));
-            }catch (Exception e){
+            } catch (Exception e) {
                 return Response.serverError().entity("Invalid Completed value. Please send a BOOLEAN ").build();
             }
 
+        } else {
+            guideexecBean.setCompleted(Boolean.FALSE);
         }
-        else{
-               guideexecBean.setCompleted(Boolean.FALSE);
-        }
-        try{
+        try {
             guideexecBean.setIdpatient(Long.parseLong(idpatient));
-        }catch (Exception e){
+        } catch (Exception e) {
             return Response.serverError().entity("Invalid patient Id. Please send a integer number").build();
         }
         Timestamp s = new Timestamp(Calendar.getInstance().getTimeInMillis());
@@ -171,20 +170,20 @@ public class GuideexecWebService extends AbstractWebService {
         } catch (DAOException e) {
 
         }
-        if(key >0){
+        if (key > 0) {
 
+            return Response.ok("Guideexec #" + key + "# successfully registered").build();
 
-            return Response.ok("Guideexec #"+key+"# successfully registered").build();
-
-        }else{
+        } else {
             return Response.serverError().entity("Invalid Patient Number").build();
         }
     }
 
     /**
-     * Method to retrieve guideexec's information.
-     * The request must contain a Cookie Header with a valid auth-token and the information
-     * will only be delivered if the user has permissions to access it
+     * Method to retrieve guideexec's information. The request must contain a
+     * Cookie Header with a valid auth-token and the information will only be
+     * delivered if the user has permissions to access it
+     *
      * @param user The username of the user
      * @return The information about the user in a json object
      */
@@ -192,17 +191,18 @@ public class GuideexecWebService extends AbstractWebService {
     @Path("active/{user}")
     @Produces(MediaType.APPLICATION_JSON)
     @TypeHint(GuideexecList.class)
-    @StatusCodes({@ResponseCode( code = 406, condition = "If mandatory parameters are missing"),
-            @ResponseCode( code = 500, condition = "If a problem with the database occurs"),
-            @ResponseCode( code = 403, condition = "If the auth-token is missing or has no privileges to access the information"),
-            @ResponseCode( code = 404, condition = "If the resource was not found"),
-            @ResponseCode( code = 200, condition = "If the resource is found")
+    @StatusCodes({
+        @ResponseCode(code = 406, condition = "If mandatory parameters are missing"),
+        @ResponseCode(code = 500, condition = "If a problem with the database occurs"),
+        @ResponseCode(code = 403, condition = "If the auth-token is missing or has no privileges to access the information"),
+        @ResponseCode(code = 404, condition = "If the resource was not found"),
+        @ResponseCode(code = 200, condition = "If the resource is found")
     })
     public Response guideexecActive(@PathParam("user") String user) {
-        if (user==null)  {
+        if (user == null) {
             return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Mandatory params are missing").build();
         }
-        if (!isUser()){
+        if (!isUser()) {
             return Response.status(Response.Status.FORBIDDEN).entity("Private information").build();
         }
 
@@ -210,16 +210,16 @@ public class GuideexecWebService extends AbstractWebService {
         String guideexecJson = "";
         GuideexecList guideexecList = null;
         GuideexecBean guideexecBean = null;
-        try{
+        try {
             Integer.parseInt(user);
             guideexecList = GuideexecManager.getInstance().getGuidelineListActive(user);
-        }catch (Exception e){
+        } catch (Exception e) {
             return Response.serverError().entity("Invalid  Id. Please send a integer number").build();
         }
-        if (guideexecList != null){
+        if (guideexecList != null) {
             guideexecJson = guideexecList.toJson();
             return Response.ok(guideexecJson, MediaType.APPLICATION_JSON_TYPE).build();
-        }else {
+        } else {
             return Response.status(Response.Status.NOT_FOUND).entity("Resource not found.").build();
         }
     }
@@ -227,38 +227,38 @@ public class GuideexecWebService extends AbstractWebService {
     //-------------------------------
     // DELETE USER
     //-------------------------------
-
     /**
      * This method deletes a given user from the system
      *
-     * @param idguideexec  The username of the user to remove
+     * @param idguideexec The username of the user to remove
      */
     @DELETE
     @Path("/{idguideexec}")
-    @StatusCodes({@ResponseCode( code = 406, condition = "If mandatory parameters are missing"),
-            @ResponseCode( code = 500, condition = "If a problem with the database occurs"),
-            @ResponseCode( code = 200, condition = "If the user was successfully deleted"),
-            @ResponseCode( code = 404, condition = "If the user was not found"),
-            @ResponseCode( code = 403, condition = "If the auth-token is missing or has" +
-                    "no privileges to access the information")
+    @StatusCodes({
+        @ResponseCode(code = 406, condition = "If mandatory parameters are missing"),
+        @ResponseCode(code = 500, condition = "If a problem with the database occurs"),
+        @ResponseCode(code = 200, condition = "If the user was successfully deleted"),
+        @ResponseCode(code = 404, condition = "If the user was not found"),
+        @ResponseCode(code = 403, condition = "If the auth-token is missing or has"
+                + "no privileges to access the information")
     })
     public Response deleteGuideexec(@PathParam("idguideexec") String idguideexec) {
-        if (!validParam(idguideexec))  {
+        if (!validParam(idguideexec)) {
             return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Mandatory params are missing").build();
         }
-        if (!isUser()){
+        if (!isUser()) {
             return Response.status(Response.Status.FORBIDDEN).entity("Private information").build();
         }
         int deleted;
 
-        try{
+        try {
             deleted = GuideexecManager.getInstance().deleteGuideexecBeanById(Long.valueOf(idguideexec));
-        }catch (Exception e){
+        } catch (Exception e) {
             return Response.serverError().entity("Invalid GuideExec Id. Please send a integer number").build();
         }
-        if (deleted > 0){
+        if (deleted > 0) {
             return Response.ok("User was successfully deleted").build();
-        }else{
+        } else {
             return Response.status(Response.Status.NOT_FOUND).entity("Resource not found.").build();
         }
     }
