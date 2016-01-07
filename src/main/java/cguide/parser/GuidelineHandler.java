@@ -29,11 +29,10 @@ public class GuidelineHandler {
     private OWLReasoner reasoner;
     private OWLDataFactory factory;
     private PrefixOWLOntologyFormat pm;
-
     public GuidelineHandler() {
 
         this.baseURL = "http://www.semanticweb.org/ontologies/2012/3/CompGuide.owl";
-        this.filename = "file:///c://Cguide.owl";
+        this.filename = "file:///c://CompGuide.owl";
         renderer = null;
         manager = null;
         ontology = null;
