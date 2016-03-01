@@ -35,7 +35,7 @@ public final class Manager
     private PrintWriter pw = new PrintWriter(System.out);
     private DataSource ds = null;
     private String jdbcDriver = "com.mysql.jdbc.Driver";
-    private String jdbcUrl = "jdbc:mysql://localhost:3306/cguide";
+    private String jdbcUrl = "jdbc:mysql://localhost:3306/compguidedb";
     private String jdbcUsername = "root";
     private String jdbcPassword = "123";
 
@@ -45,7 +45,7 @@ public final class Manager
     private Manager()
     {
          jdbcDriver = "com.mysql.jdbc.Driver";
-         jdbcUrl = "jdbc:mysql://localhost:3306/cguide";
+         jdbcUrl = "jdbc:mysql://localhost:3306/compguidedb";
          jdbcUsername = "root";
          jdbcPassword = "123";
     }
@@ -83,7 +83,7 @@ public final class Manager
                 if (bundle.getString("jdbc.datasourceString") != null &&
                     bundle.getString("jdbc.datasourceString").length() > 0){
                     System.out.println("A datasourceString was found and will be used instead of jdbc settings from file: " + fileName);
-                    String strDSName = "java:jboss/datasources/cguide";
+                    String strDSName = "java:jboss/datasources/compguidedb";
                     Context context = new InitialContext();
                     DataSource ds = (DataSource) context.lookup(strDSName);
                     this.setDataSource(ds);
