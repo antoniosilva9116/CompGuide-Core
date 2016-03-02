@@ -1,6 +1,9 @@
 package cguide.parser;
 
+import cguide.MainCoreServer;
 import cguide.execution.entities.*;
+import java.net.URISyntaxException;
+import java.nio.file.*;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.OWLObjectRenderer;
 import org.semanticweb.owlapi.model.*;
@@ -11,6 +14,8 @@ import org.semanticweb.owlapi.vocab.PrefixOWLOntologyFormat;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,10 +34,11 @@ public class GuidelineHandler {
     private OWLReasoner reasoner;
     private OWLDataFactory factory;
     private PrefixOWLOntologyFormat pm;
+
     public GuidelineHandler() {
 
         this.baseURL = "http://www.semanticweb.org/ontologies/2012/3/CompGuide.owl";
-        this.filename = "file:///c://CompGuide.owl";
+        this.filename = "/owl/CompGuide.owl";
         renderer = null;
         manager = null;
         ontology = null;
@@ -60,12 +66,14 @@ public class GuidelineHandler {
 
         //prepare ontology and reasoner
         this.manager = OWLManager.createOWLOntologyManager();
-        //OWLOntology ontology = manager.loadOntologyFromOntologyDocument(IRI.create(BASE_URL));
+
+        String file = "file:///" + GuidelineHandler.class.getResource(filename).getFile();
         try {
-            this.ontology = manager.loadOntologyFromOntologyDocument(IRI.create(filename));
-        } catch (OWLOntologyCreationException e) {
-            return false;
+            this.ontology = manager.loadOntologyFromOntologyDocument(IRI.create(file));
+        } catch (OWLOntologyCreationException ex) {
+            Logger.getLogger(GuidelineHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         this.factory = manager.getOWLDataFactory();
         this.pm = (PrefixOWLOntologyFormat) manager.getOntologyFormat(ontology);
         this.pm.setDefaultPrefix(baseURL + "#");

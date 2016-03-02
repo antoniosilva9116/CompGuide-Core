@@ -35,9 +35,9 @@ public final class Manager
     private PrintWriter pw = new PrintWriter(System.out);
     private DataSource ds = null;
     private String jdbcDriver = "com.mysql.jdbc.Driver";
-    private String jdbcUrl = "jdbc:mysql://localhost:3306/compguidedb";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "123";
+    private String jdbcUrl = "jdbc:mysql://boxdb-antoniosilva9116-prod-compguideweb.cm8ujxf8qvtj.eu-central-1.rds.amazonaws.com:3306/compguideweb";
+    private String jdbcUsername = "s3dMjbpxP0RunOj7";
+    private String jdbcPassword = "1Oa1eFEfUUuUX5ZXTcpjbL36WIxOeZ9mgkajRHHYO";
 
     /**
      * Returns the manager singleton instance.
@@ -45,9 +45,9 @@ public final class Manager
     private Manager()
     {
          jdbcDriver = "com.mysql.jdbc.Driver";
-         jdbcUrl = "jdbc:mysql://localhost:3306/compguidedb";
-         jdbcUsername = "root";
-         jdbcPassword = "123";
+         jdbcUrl = "jdbc:mysql://boxdb-antoniosilva9116-prod-compguideweb.cm8ujxf8qvtj.eu-central-1.rds.amazonaws.com:3306/compguideweb";
+         jdbcUsername = "s3dMjbpxP0RunOj7";
+         jdbcPassword = "1Oa1eFEfUUuUX5ZXTcpjbL36WIxOeZ9mgkajRHHYO";
     }
 
     /**
