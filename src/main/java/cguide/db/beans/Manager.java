@@ -36,8 +36,8 @@ public final class Manager
     private DataSource ds = null;
     private String jdbcDriver = "com.mysql.jdbc.Driver";
     private String jdbcUrl = "jdbc:mysql://boxdb-antoniosilva9116-prod-compguideweb.cm8ujxf8qvtj.eu-central-1.rds.amazonaws.com:3306/compguideweb";
-    private String jdbcUsername = "s3dMjbpxP0RunOj7";
-    private String jdbcPassword = "1Oa1eFEfUUuUX5ZXTcpjbL36WIxOeZ9mgkajRHHYO";
+    private String jdbcUsername = "PAm6IBWxt12k2dnx";
+    private String jdbcPassword = "YEMpGc5eDM7ApxQIKiHxMyBJrTanVeglpKUzQ2TPK";
 
     /**
      * Returns the manager singleton instance.
@@ -46,8 +46,8 @@ public final class Manager
     {
          jdbcDriver = "com.mysql.jdbc.Driver";
          jdbcUrl = "jdbc:mysql://boxdb-antoniosilva9116-prod-compguideweb.cm8ujxf8qvtj.eu-central-1.rds.amazonaws.com:3306/compguideweb";
-         jdbcUsername = "s3dMjbpxP0RunOj7";
-         jdbcPassword = "1Oa1eFEfUUuUX5ZXTcpjbL36WIxOeZ9mgkajRHHYO";
+         jdbcUsername = "PAm6IBWxt12k2dnx";
+         jdbcPassword = "YEMpGc5eDM7ApxQIKiHxMyBJrTanVeglpKUzQ2TPK";
     }
 
     /**
