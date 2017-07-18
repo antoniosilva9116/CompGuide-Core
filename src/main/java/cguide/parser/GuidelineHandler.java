@@ -38,7 +38,7 @@ public class GuidelineHandler {
     public GuidelineHandler() {
 
         this.baseURL = "http://www.semanticweb.org/ontologies/2012/3/CompGuide.owl";
-        this.filename = "/owl/CompGuide.owl";
+        this.filename = "/owl/CompGuide2.owl";
         renderer = null;
         manager = null;
         ontology = null;
