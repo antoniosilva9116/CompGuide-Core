@@ -38,7 +38,7 @@ public class GuidelineHandler {
     public GuidelineHandler() {
 
         this.baseURL = "http://www.semanticweb.org/ontologies/2012/3/CompGuide.owl";
-        this.filename = "/owl/CompGuide2.owl";
+        this.filename = "/owl/CompGuide1.owl";
         renderer = null;
         manager = null;
         ontology = null;
@@ -822,7 +822,7 @@ public class GuidelineHandler {
                 if (field.equals("hasClinicalActionType")) {
                     action.addClinicalAction(this.getClinicalAction(parseIRI(literal.toString())));
                 }
-                if (field.equals("hasClinicalActionType")) {
+                if (field.equals("hasWaitingTime")) {
                     action.setWaitingTime(this.getWaitingTime(parseIRI(literal.toString())));
                 }
                 if (field.equals("alternativeTask")) {
