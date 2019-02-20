@@ -37,7 +37,7 @@ public final class Manager
     private String jdbcDriver = "com.mysql.jdbc.Driver";
     private String jdbcUrl = "jdbc:mysql://localhost:3306/compguidedb";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "123";
+    private String jdbcPassword = "";
 
     /**
      * Returns the manager singleton instance.
@@ -47,7 +47,7 @@ public final class Manager
          jdbcDriver = "com.mysql.jdbc.Driver";
          jdbcUrl = "jdbc:mysql://localhost:3306/compguidedb";
          jdbcUsername = "root";
-         jdbcPassword = "123";
+         jdbcPassword = "";
     }
 
     /**
